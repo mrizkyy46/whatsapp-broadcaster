@@ -6,7 +6,7 @@ Script ini menggunakan [whatsapp-web.js](https://github.com/pedroslopez/whatsapp
 
 ### 1. Install Node.js
 
-- Unduh dan install Node.js versi **18.x atau lebih baru** dari [Node.js Official](https://nodejs.org/). atau https://nodejs.org/download/release/v22.17.1/ lalu extract di C:/
+- Unduh dan install Node.js versi **18.x atau lebih baru** dari [Node.js Official](https://nodejs.org/). atau [Node.js Binary](https://nodejs.org/download/release/v22.17.1/) lalu extract di C:/
 - Set path Nodejs
     ```powershell
     set PATH=%PATH%;C:\nodejs\

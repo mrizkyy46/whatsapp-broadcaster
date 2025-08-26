@@ -22,8 +22,10 @@ Script ini menggunakan [whatsapp-web.js](https://github.com/pedroslopez/whatsapp
 - Jalankan command dibawah dengan terminal atau CMD
     ```powershell
     - mkdir whatsapp-broadcast
-    - cd whatsapp-broadcast
     ```
+  ```powershell
+    - cd whatsapp-broadcast
+  ```
 
 ### 3. Inisialisasi Project
 
@@ -44,6 +46,7 @@ Script ini menggunakan [whatsapp-web.js](https://github.com/pedroslopez/whatsapp
     ```powershell
     notepad index.js
     ```
+    
 - Salin kode berikut ke file index.js:
     ```js
     const { Client, LocalAuth, MessageMedia } = require('whatsapp-web.js');

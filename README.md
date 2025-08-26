@@ -32,8 +32,8 @@ Jalankan command dibawah dengan terminal atau CMD
 - npm install whatsapp-web.js qrcode-terminal
 
 ### 5. Buat File index.js
-
-Salin kode berikut ke file index.js:
+- ketik di cmd, notepad index.js
+- Salin kode berikut ke file index.js:
 
     const { Client, LocalAuth, MessageMedia } = require('whatsapp-web.js');
     const qrcode = require('qrcode-terminal');

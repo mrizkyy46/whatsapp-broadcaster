@@ -84,7 +84,9 @@ Script ini menggunakan [whatsapp-web.js](https://github.com/pedroslopez/whatsapp
     
         for (let number of recipients) {
             const media = MessageMedia.fromFilePath('./path/to/image.png');
-            await client.sendMessage(number, media, { caption: 'test message from whatsapp-web-developer' }); // Ubah pesan dibagian ini
+            await client.sendMessage(number, media, { caption:
+                `test message from whatsapp-web-developer`
+            }); // Ubah pesan dibagian ini
             console.log(`Message sent to ${number}`);
             await sleep(3000);
         }

@@ -14,6 +14,8 @@ Script ini menggunakan [whatsapp-web.js](https://github.com/pedroslopez/whatsapp
 - Pastikan sudah terpasang dengan cek versi pada terminal atau CMD:
     ```powershell
     node -v
+    ```
+    ```powershell
     npm -v
     ```
 
@@ -21,11 +23,11 @@ Script ini menggunakan [whatsapp-web.js](https://github.com/pedroslopez/whatsapp
 
 - Jalankan command dibawah dengan terminal atau CMD
     ```powershell
-    - mkdir whatsapp-broadcast
+    mkdir whatsapp-broadcast
     ```
-  ```powershell
-    - cd whatsapp-broadcast
-  ```
+    ```powershell
+    cd whatsapp-broadcast
+    ```
 
 ### 3. Inisialisasi Project
 

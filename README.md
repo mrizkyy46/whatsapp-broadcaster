@@ -34,62 +34,59 @@ Jalankan command dibawah dengan terminal atau CMD
 ### 5. Buat File index.js
 - ketik di cmd, notepad index.js
 - Salin kode berikut ke file index.js:
+```const { Client, LocalAuth, MessageMedia } = require('whatsapp-web.js');
+const qrcode = require('qrcode-terminal');
+const fs = require('fs');
+const path = require('path');
 
-    const { Client, LocalAuth, MessageMedia } = require('whatsapp-web.js');
-    const qrcode = require('qrcode-terminal');
-    const fs = require('fs');
-    const path = require('path');
-
-    const loadRecipients = (filename) => {
+const loadRecipients = (filename) => {
     const ext = path.extname(filename).toLowerCase();
     const data = fs.readFileSync(filename, 'utf-8');
 
-        return data
-            .split('\n')
-            .map(line => line.trim())
-            .filter(line => line.length)
-            .map(number => number + '@c.us');
+    return data
+        .split('\n')
+        .map(line => line.trim())
+        .filter(line => line.length)
+        .map(number => number + '@c.us');
+}
 
-    }
-
-    const client = new Client({
+const client = new Client({
     authStrategy: new LocalAuth(),
     puppeteer: { headless: true }
-    });
+});
 
-    const recipients = loadRecipients('recipients.csv'); //sesuaikan nama file
-    const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+const recipients = loadRecipients('recipients.csv'); //sesuaikan nama file
+const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
-    client.on('qr', qr => {
+client.on('qr', qr => {
     qrcode.generate(qr, { small: true });
-    });
+});
 
-    client.on('ready', async () => {
+client.on('ready', async () => {
     console.log('Client is ready!');
 
-        for (let number of recipients) {
-            const media = MessageMedia.fromFilePath('./path/to/image.png');
-            await client.sendMessage(number, media, { caption: 'test message from whatsapp-web-developer' }); // Ubah pesan dibagian ini
-            console.log(`Message sent to ${number}`);
-            await sleep(3000);
-        }
+    for (let number of recipients) {
+        const media = MessageMedia.fromFilePath('./path/to/image.png');
+        await client.sendMessage(number, media, { caption: 'test message from whatsapp-web-developer' }); // Ubah pesan dibagian ini
+        console.log(`Message sent to ${number}`);
+        await sleep(3000);
+    }
+});
 
-    });
-
-    client.on('authenticated', () => {
+client.on('authenticated', () => {
     console.log('Authenticated successfully!');
-    });
+});
 
-    client.on('auth_failure', msg => {
+client.on('auth_failure', msg => {
     console.error('Authentication failed:', msg);
-    });
+});
 
-    client.on('disconnected', (reason) => {
+client.on('disconnected', (reason) => {
     console.log('Client disconnected:', reason);
     client.initialize();
-    });
+});
 
-    client.initialize();
+client.initialize();```
 
 ### 6. Jalankan Script
 

@@ -7,9 +7,10 @@ Script ini menggunakan [whatsapp-web.js](https://github.com/pedroslopez/whatsapp
 ### 1. Install Node.js
 
 - Unduh dan install Node.js versi **18.x atau lebih baru** dari [Node.js Official](https://nodejs.org/).
+- set PATH=%PATH%;C:\nodejs\
 - Pastikan sudah terpasang dengan cek versi pada terminal atau CMD:
-  node -v
-  npm -v
+    node -v
+    npm -v
 
 ### 2. Buat Folder Project
 

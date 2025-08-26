@@ -34,7 +34,7 @@ Jalankan command dibawah dengan terminal atau CMD
 
 Salin kode berikut ke file index.js:
 
-    const { Client, LocalAuth } = require('whatsapp-web.js');
+    const { Client, LocalAuth, MessageMedia } = require('whatsapp-web.js');
     const qrcode = require('qrcode-terminal');
     const fs = require('fs');
     const path = require('path');
@@ -67,7 +67,8 @@ Salin kode berikut ke file index.js:
     console.log('Client is ready!');
 
         for (let number of recipients) {
-            await client.sendMessage(number, `test message from whatsapp-web-developer`); // Ubah pesan dibagian ini
+            const media = MessageMedia.fromFilePath('./path/to/image.png');
+            await client.sendMessage(number, media, { caption: 'test message from whatsapp-web-developer' }); // Ubah pesan dibagian ini
             console.log(`Message sent to ${number}`);
             await sleep(3000);
         }
